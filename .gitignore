@@ -1,3 +1,5 @@
 .vscode/
-codetop/*.exe
-LeetCodeHot100/*.exe
+codetop/*
+!codetop/*.cpp
+LeetCodeHot100/*
+!LeetCodeHot100/*.cpp
