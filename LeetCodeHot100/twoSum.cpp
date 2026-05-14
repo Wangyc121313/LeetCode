@@ -4,7 +4,7 @@
 #include <algorithm>
 using namespace std;
 
-vector<int> twoSum(vector<int>& nums, int target) {
+vector<int> twosum(vector<int>& nums, int target){
     unordered_map<int, int> mp;
     for(int i = 0; i < nums.size(); i++){
         if(mp.count(target - nums[i])) return {mp[target - nums[i]], i};
@@ -14,9 +14,9 @@ vector<int> twoSum(vector<int>& nums, int target) {
 }
 
 int main(){
-    vector<int> nums = {2, 7, 11, 15};
+    vector<int> nums = {2, 7, 3, 11};
     int target = 9;
-    vector<int> ans = twoSum(nums, target);
-    cout << ans[0] << " " << ans[1] << endl;
+    vector<int> ans = twosum(nums, target);
+    cout << ans[0] << " " << ans[1] << "\n";
     return 0;
 }
