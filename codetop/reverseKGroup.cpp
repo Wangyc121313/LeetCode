@@ -1,3 +1,10 @@
+/*
+给你链表的头节点 head ，每 k 个节点一组进行翻转，请你返回修改后的链表。
+
+k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。
+
+你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+*/
 #include <vector>
 #include <iostream>
 using namespace std;
@@ -23,10 +30,11 @@ ListNode* reverseKGroup(ListNode* head, int k){
             pre = cur;
             cur = next;
         }
-        ListNode* next = p0->next;//1
-        p0->next->next = cur;
-        p0->next = pre;
-        p0 = next;
+        //以{1,2,3,4,5}为例，第一次内循环结束，pre=3,cur=4,p0->next仍然指向1
+        ListNode* next = p0->next;  // 保存1
+        p0->next->next = cur;       // 1指向4
+        p0->next = pre;             // dummy指向3
+        p0 = next;                  // 更新p0为1
     }
     return dummy.next;
 }
