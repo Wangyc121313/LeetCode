@@ -11,6 +11,8 @@
 #include <ctime>
 using namespace std;
 
+// 快速排序，使用双指针相向分割扫描，随机选择一个pibot = nums[i]，以pivot为基准，
+// 左边发现大于它的值就和右边发现小于它的值交换，最后形成[<] pivot [>]的情况，返回下标（即它正确的位置）
 int partition(vector<int>& nums, int left, int right){
     int i = left + rand()%(right - left + 1);
     int pivot = nums[i];
