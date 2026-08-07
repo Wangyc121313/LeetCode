@@ -1,10 +1,13 @@
+/*
+给你一个字符串 s，找到 s 中最长的 回文 子串。
+*/
 #include <vector>
 #include <string>
 #include <iostream>
 using namespace std;
 
 string longestPalindrome(string s){
-    //从中间出发
+    //从中间出发，考虑aba和abba两种情况，n个字符，n-1个空隙
     int n = s.length();
     int start = 0, end = 0;
     for(int i = 0; i < 2 * n - 1; i++){
@@ -14,6 +17,7 @@ string longestPalindrome(string s){
             l--;
             r++;
         }
+        // 有效区间应该是[l+1,r-1]，长度为r-1-l-1+1=r-l+1
         if(r - l - 1> end - start){
             end = r;
             start = l + 1;
