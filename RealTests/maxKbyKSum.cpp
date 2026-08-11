@@ -23,7 +23,36 @@ Result maxKbyKSum(vector<vector<int>>& grid, int k){
     vector<vector<int>> P(m + 1, vector<int>(n + 1, 0));
     for(int i = 0; i < m;i++){
         for(int j = 0; j < n;j++){
-            P[i + 1][j + 1] = grid[i]
+            P[i + 1][j + 1] = grid[i][j] + P[i + 1][j] + P[i][j + 1] - P[i][j];
         }
     }
+
+    int maxSum = INT_MIN;
+    int bestRow = -1;
+    int bestCol = -1;
+
+    for(int r = 0; r <= m - k; r++){
+        for(int c =0; c <= n - k; c++){
+            int cur = P[r + k][c + k] - P[r][c + k] - P[r + k][c] + P[r][c];
+            if(cur > maxSum){
+                maxSum = cur;
+                bestRow = r;
+                bestCol = c;
+            }
+        }
+    }
+    return {maxSum, bestRow, bestCol};
+}
+
+int main(){
+    vector<vector<int>> grid = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 0, 1}
+    };
+    int k = 2;
+    Result res = maxKbyKSum(grid, k);
+    cout << res.maxSum << "\n";
+    cout << res.row << "," << res.col << "\n";
+    return 0;
 }
