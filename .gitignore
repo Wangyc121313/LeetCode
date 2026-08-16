@@ -3,7 +3,10 @@ codetop/*
 !codetop/*.cpp
 LeetCodeHot100/*
 !LeetCodeHot100/*.cpp
-RealTests/*
-!RealTests/*.cpp
-!RealTests/*.md
+RealTests/ByteDance/*
+!RealTests/ByteDance/*.cpp
+RealTests/Huawei/*
+!RealTests/Huawei/*.cpp
+RealTests/WeRide/*
+!RealTests/WeRide/*.cpp
 codetop/test.cpp
