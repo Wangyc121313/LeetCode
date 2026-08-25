@@ -24,7 +24,9 @@ int main(){
     cin >> n;
     int max_history;
     cin >> max_history;
+    // 需要满足能同时操作front和back，front对应超出历史记录个数时删除头部元素，back对应当前页面加入历史记录，所以用双端队列
     deque<string> hist;
+    // 需要满足后进先出，forward时取出的必须是最近一次，vector的push_back()、pop_back()和back()都是O(1)的
     vector<string> fwd;
     hist.push_back("Blank");
     for(int i = 0; i < n; i++){
