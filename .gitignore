@@ -9,4 +9,6 @@ RealTests/Huawei/*
 !RealTests/Huawei/*.cpp
 RealTests/WeRide/*
 !RealTests/WeRide/*.cpp
+RealTests/Xiaopeng/*
+!RealTests/Xiaopeng/*.cpp
 codetop/test.cpp
