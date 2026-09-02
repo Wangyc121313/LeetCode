@@ -25,7 +25,7 @@ int search(vector<int>& nums, int target){
 }
 
 int main(){
-    vector<int> nums = {-1, 0, 3, 5, 9, 12};
+    vector<int> nums = {5, 9, 12, -1, 0, 3};
     int target = 9;
     cout << search(nums, target) << "\n";
     return 0;

@@ -12,7 +12,7 @@ using namespace std;
 int lengthofLongestSubString(string s){
     int ans = 0;
     int n = s.length();
-    unordered_map<char, int> mp;
+    unordered_map<char, int> mp;    // 用一个哈希表存储字符出现的次数
     int l = 0;
     for(int r = 0; r < n; r++){
         mp[s[r]]++;

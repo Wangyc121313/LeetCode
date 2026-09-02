@@ -35,7 +35,7 @@ int main(){
     vector<vector<int>> ans = permute(nums);
     for(vector num : ans){
         for(int n : num) cout << n << " ";
-        cout << ",";
+        cout << "\n";
     }
     return 0;
 }

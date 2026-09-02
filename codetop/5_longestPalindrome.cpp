@@ -19,7 +19,7 @@ string longestPalindrome(string s){
             l--;
             r++;
         }
-        // 有效区间应该是[l+1,r-1]，长度为r-1-l-1+1=r-l+1
+        // 有效区间应该是[l+1,r-1]，长度为r-1-l-1+1=r-l-1
         if(r - l - 1> end - start){
             end = r;
             start = l + 1;
